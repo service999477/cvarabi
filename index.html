@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>مولّد السيرة الذاتية</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f5f9;--card:#fff;--ink:#14171f;--mut:#6a7182;--line:#dfe3ec;--ac:#2563eb;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1116;--card:#181c24;--ink:#eef1f7;--mut:#98a0b3;--line:#2a303c;--ac:#5b8cff;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1116;--card:#181c24;--ink:#eef1f7;--mut:#98a0b3;--line:#2a303c;--ac:#5b8cff;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Cairo",system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;display:flex;justify-content:center}
+main{width:100%;max-width:560px;padding:16px 12px 40px;display:flex;flex-direction:column;gap:12px}
+h1{margin:0;font-size:24px;text-align:center}.sub{margin:0;text-align:center;color:var(--mut);font-size:13px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:10px}
+.card h2{margin:0;font-size:16px}
+label{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--mut)}
+input,textarea{font:inherit;font-size:15px;padding:9px 10px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);width:100%}
+input[type=color]{height:42px;padding:3px}
+.row{display:flex;gap:8px;flex-wrap:wrap}.row>button{flex:1}
+button{font:600 14px "Cairo",system-ui,sans-serif;padding:10px 14px;border-radius:12px;border:1px solid var(--ac);background:var(--ac);color:#fff;cursor:pointer}
+button.alt{background:transparent;color:var(--ink);border-color:var(--line)}
+button.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+.tabs{display:flex;gap:8px}.tabs button{flex:1}
+.it{border:1px dashed var(--line);border-radius:12px;padding:10px;display:flex;flex-direction:column;gap:8px}
+.note{font-size:12.5px;color:var(--mut);margin:0}
+#wrap{overflow:hidden;width:100%}
+#cv{width:794px;min-height:1123px;background:#fff;color:#1d2433;font-family:"Cairo",system-ui,sans-serif;font-size:14px;line-height:1.6;box-shadow:0 2px 14px rgba(0,0,0,.22);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+#cv *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+#cv h1{margin:0;font-size:34px;line-height:1.2}
+#cv h2{margin:2px 0 0;font-size:17px;font-weight:600;color:var(--c)}
+#cv h3{margin:18px 0 8px;font-size:15px;color:var(--c);letter-spacing:.5px;border-bottom:2px solid var(--c);padding-bottom:3px}
+#cv p{margin:3px 0 0}
+.e{margin-bottom:12px;break-inside:avoid}.eh{display:flex;justify-content:space-between;gap:10px}
+.dt{color:#6b7385;font-size:12.5px;white-space:nowrap}.co{color:#4a5368;font-weight:600}
+.chip{display:inline-block;padding:1px 10px;margin:2px;border-radius:999px;font-size:12.5px}
+.ph{width:130px;height:130px;object-fit:cover;border-radius:50%;display:block}
+.t-modern{display:flex}
+.t-modern aside{width:250px;background:var(--c);color:#fff;padding:28px 20px;min-height:1123px}
+.t-modern aside h3{color:#fff;border-color:rgba(255,255,255,.5)}
+.t-modern aside div{word-break:break-word;font-size:13px}
+.t-modern .ph{margin:0 auto 14px}.t-modern .chip{background:rgba(255,255,255,.2)}
+.t-modern .mn{flex:1;padding:30px 28px}
+.t-classic .hd{padding:30px 40px 12px;text-align:center;border-bottom:4px solid var(--c)}
+.t-classic .ph{margin:0 auto 10px}.t-classic .ct{margin-top:6px;color:#4a5368;font-size:13px}
+.t-classic .mn,.t-minimal .mn{padding:4px 40px 30px}.t-classic .chip,.t-minimal .chip{background:#eef1f6}
+.t-minimal .hd{padding:36px 40px 4px;display:flex;gap:18px;align-items:center}
+.t-minimal .ph{width:96px;height:96px}.t-minimal h2{color:#4a5368}.t-minimal .ct{color:#4a5368;font-size:13px;margin-top:4px}
+.t-minimal h3{color:#1d2433;border-bottom:1px solid #cfd5e1}
+@media print{
+@page{size:A4;margin:0}
+:root{padding:0}body{background:#fff;display:block}
+main>*:not(#pv){display:none!important}#pv>*:not(#wrap){display:none!important}
+main{max-width:none;padding:0}#wrap{height:auto!important;overflow:visible!important}
+#cv{transform:none!important;box-shadow:none!important}}
+</style>
+</head>
+<body>
+<main>
+<h1>📄 مولّد السيرة الذاتية</h1>
+<p class="sub">عبّي بياناتك، واختار الشكل، وانزّلها PDF</p>
+<section id="ed" style="display:flex;flex-direction:column;gap:12px">
+<div class="card"><h2>الشكل</h2>
+<div class="row"><button data-tpl="modern">عصري</button><button data-tpl="classic">كلاسيكي</button><button data-tpl="minimal">بسيط</button></div>
+<div class="row"><button data-lang="ar">السيرة بالعربي</button><button data-lang="en">English CV</button></div>
+<label>اللون<input type="color" data-k="color"></label>
+<label>الصورة (اختياري)<input type="file" id="photo" accept="image/*"></label>
+<button class="alt" id="noPh">حذف الصورة</button></div>
+<div class="card"><h2>البيانات الشخصية</h2>
+<label>الاسم الكامل<input data-k="name"></label>
+<label>المسمى الوظيفي<input data-k="title"></label>
+<label>البريد الإلكتروني<input data-k="email" type="email" dir="ltr"></label>
+<label>رقم الهاتف<input data-k="phone" type="tel" dir="ltr"></label>
+<label>المدينة والدولة<input data-k="city"></label>
+<label>رابط (لينكدإن أو موقع)<input data-k="link" dir="ltr"></label></div>
+<div class="card"><h2>نبذة عنك</h2><textarea data-k="summary" rows="4"></textarea></div>
+<div class="card"><h2>الخبرة العملية</h2><div id="exp"></div><button class="alt" data-add="exp">+ أضف خبرة</button></div>
+<div class="card"><h2>التعليم</h2><div id="edu"></div><button class="alt" data-add="edu">+ أضف تعليم</button></div>
+<div class="card"><h2>المهارات</h2><textarea data-k="skills" rows="2" placeholder="افصل بين المهارات بفاصلة"></textarea></div>
+<div class="card"><h2>اللغات</h2><textarea data-k="langs" rows="3" placeholder="كل لغة بسطر، مثل: العربية - اللغة الأم"></textarea></div>
+<div class="row"><button class="alt" id="smp">مثال جاهز</button><button class="alt" id="rst">مسح الكل</button></div>
+<button id="go">شوف السيرة ←</button>
+</section>
+<section id="pv" hidden style="display:none;flex-direction:column;gap:10px">
+<div class="row"><button id="prt">🖨️ حفظ PDF / طباعة</button><button class="alt" id="bk">رجوع للتعديل</button></div>
+<p class="note">إذا زر الطباعة ما اشتغل داخل المعاينة، افتح رابط الصفحة مباشرة بالمتصفح، ثم اختار «حفظ كـ PDF».</p>
+<div id="wrap"><div id="cv"></div></div>
+</section>
+</main>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const esc=t=>String(t||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const nl=t=>esc(t).replace(/\n/g,'<br>');
+const T={ar:{c:'التواصل',s:'نبذة عني',e:'الخبرة العملية',d:'التعليم',k:'المهارات',l:'اللغات'},en:{c:'Contact',s:'Summary',e:'Experience',d:'Education',k:'Skills',l:'Languages'}};
+const FD={exp:[['role','المسمى'],['co','الشركة'],['from','من (مثلاً 2021)'],['to','إلى (أو: حتى الآن)'],['desc','الوصف والإنجازات','ta']],edu:[['deg','الشهادة / التخصص'],['school','الجامعة أو المعهد'],['from','من'],['to','إلى']]};
+const blank=()=>({name:'',title:'',email:'',phone:'',city:'',link:'',summary:'',photo:'',exp:[{role:'',co:'',from:'',to:'',desc:''}],edu:[{deg:'',school:'',from:'',to:''}],skills:'',langs:'',tpl:'modern',color:'#2563eb',lang:'ar'});
+let S;try{S=JSON.parse(localStorage.getItem('cv1'))}catch(e){}
+S=S||blank();
+const save=()=>{try{localStorage.setItem('cv1',JSON.stringify(S))}catch(e){}};
+function lists(){['exp','edu'].forEach(a=>{$('#'+a).innerHTML=S[a].map((it,i)=>'<div class="it">'+FD[a].map(([k,l,t])=>{const at=`data-a="${a}" data-i="${i}" data-k="${k}"`;return t?`<label>${l}<textarea ${at} rows="3">${esc(it[k])}</textarea></label>`:`<label>${l}<input ${at} value="${esc(it[k])}"></label>`}).join('')+`<button class="alt" data-del="${a}" data-i="${i}">حذف</button></div>`).join('')})}
+function fill(){$$('[data-k]:not([data-a])').forEach(e=>e.value=S[e.dataset.k]||'');ui()}
+function ui(){$$('[data-tpl]').forEach(b=>b.className=b.dataset.tpl===S.tpl?'on':'alt');$$('[data-lang]').forEach(b=>b.className=b.dataset.lang===S.lang?'on':'alt')}
+function draw(){
+const t=T[S.lang],cv=$('#cv');cv.className='t-'+S.tpl;cv.dir=S.lang==='ar'?'rtl':'ltr';cv.style.setProperty('--c',S.color);
+const cl=[S.email,S.phone,S.city,S.link].filter(Boolean);
+const contact=cl.map(x=>`<div>${esc(x)}</div>`).join('');
+const sk=S.skills.split(/[,،\n]/).map(x=>x.trim()).filter(Boolean).map(x=>`<span class="chip">${esc(x)}</span>`).join('');
+const lg=S.langs.split('\n').map(x=>x.trim()).filter(Boolean).map(x=>`<div>${esc(x)}</div>`).join('');
+const ex=S.exp.filter(x=>x.role||x.co).map(x=>`<div class="e"><div class="eh"><b>${esc(x.role)}</b><span class="dt">${esc([x.from,x.to].filter(Boolean).join(' – '))}</span></div><div class="co">${esc(x.co)}</div>${x.desc?`<p>${nl(x.desc)}</p>`:''}</div>`).join('');
+const ed=S.edu.filter(x=>x.deg||x.school).map(x=>`<div class="e"><div class="eh"><b>${esc(x.deg)}</b><span class="dt">${esc([x.from,x.to].filter(Boolean).join(' – '))}</span></div><div class="co">${esc(x.school)}</div></div>`).join('');
+const ph=S.photo?`<img class="ph" src="${S.photo}" alt="">`:'';
+const sec=(h,b)=>b?`<h3>${h}</h3>${b}`:'';
+const nm=`<h1>${esc(S.name)||'—'}</h1><h2>${esc(S.title)}</h2>`;
+const sm=S.summary?`<p>${nl(S.summary)}</p>`:'';
+if(S.tpl==='modern')cv.innerHTML=`<aside>${ph}${sec(t.c,contact)}${sec(t.k,sk?`<div>${sk}</div>`:'')}${sec(t.l,lg)}</aside><div class="mn">${nm}${sec(t.s,sm)}${sec(t.e,ex)}${sec(t.d,ed)}</div>`;
+else cv.innerHTML=`<div class="hd">${ph}<div>${nm}<div class="ct">${cl.map(esc).join(' • ')}</div></div></div><div class="mn">${sec(t.s,sm)}${sec(t.e,ex)}${sec(t.d,ed)}${sec(t.k,sk?`<div>${sk}</div>`:'')}${sec(t.l,lg)}</div>`;
+fit()}
+function fit(){const w=$('#wrap'),cv=$('#cv');if(!w.clientWidth)return;const s=Math.min(1,w.clientWidth/794);w.dir=cv.dir;cv.style.transform=`scale(${s})`;cv.style.transformOrigin=cv.dir==='rtl'?'top right':'top left';w.style.height=cv.offsetHeight*s+'px'}
+function show(p){$('#ed').style.display=p?'none':'flex';$('#pv').style.display=p?'flex':'none';if(p){draw()}window.scrollTo(0,0)}
+document.addEventListener('input',e=>{const t=e.target,k=t.dataset.k;if(!k)return;if(t.dataset.a)S[t.dataset.a][+t.dataset.i][k]=t.value;else S[k]=t.value;save()});
+document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const d=b.dataset;
+if(d.tpl){S.tpl=d.tpl;ui();save()}
+if(d.lang){S.lang=d.lang;ui();save()}
+if(d.add){S[d.add].push(Object.fromEntries(FD[d.add].map(f=>[f[0],''])));lists();save()}
+if(d.del){if(S[d.del].length>1)S[d.del].splice(+d.i,1);else Object.keys(S[d.del][0]).forEach(k=>S[d.del][0][k]='');lists();save()}});
+$('#go').onclick=()=>show(true);$('#bk').onclick=()=>show(false);
+$('#prt').onclick=()=>{try{window.print()}catch(e){}};
+$('#noPh').onclick=()=>{S.photo='';save();$('#photo').value=''};
+$('#smp').onclick=()=>{S=Object.assign(blank(),{name:'أحمد محمد',title:'مصمم جرافيك',email:'ahmad@example.com',phone:'+962 7 0000 0000',city:'عمّان، الأردن',link:'linkedin.com/in/ahmad',summary:'مصمم جرافيك بخبرة ٥ سنوات بتصميم الهويات البصرية وحملات التواصل الاجتماعي، أحب تحويل الأفكار لتصاميم واضحة وجذابة.',exp:[{role:'مصمم جرافيك',co:'شركة إبداع للتسويق',from:'2021',to:'حتى الآن',desc:'تصميم هويات بصرية لأكثر من ٣٠ علامة تجارية.\nإدارة تصاميم حملات إعلانية وزيادة التفاعل.'},{role:'مصمم مبتدئ',co:'استوديو ألوان',from:'2019',to:'2021',desc:'تصميم منشورات وشعارات للعملاء.'}],edu:[{deg:'بكالوريوس تصميم جرافيك',school:'جامعة العلوم التطبيقية',from:'2015',to:'2019'}],skills:'فوتوشوب، إليستريتور، تصميم الشعارات، العمل ضمن فريق',langs:'العربية - اللغة الأم\nالإنجليزية - جيد جداً',tpl:S.tpl,color:S.color,lang:'ar'});save();fill();lists()};
+let sure=0;$('#rst').onclick=function(){if(!sure){sure=1;this.textContent='اضغط مرة ثانية للتأكيد';setTimeout(()=>{sure=0;this.textContent='مسح الكل'},3000);return}sure=0;this.textContent='مسح الكل';S=blank();save();fill();lists()};
+$('#photo').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const c=document.createElement('canvas'),s=300,m=Math.min(im.width,im.height);c.width=c.height=s;c.getContext('2d').drawImage(im,(im.width-m)/2,(im.height-m)/2,m,m,0,0,s,s);S.photo=c.toDataURL('image/jpeg',.85);save()};im.src=r.result};r.readAsDataURL(f)};
+addEventListener('resize',fit);
+fill();lists();
+</script>
+</body>
+</html>
